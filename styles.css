@@ -1,0 +1,239 @@
+:root {
+  --page-bg: #f3f6f8;
+  --surface: #ffffff;
+  --text: #20242a;
+  --muted-border: #edf0f2;
+  --selected: #ffefb4;
+  --accent: #f20d0d;
+  --avatar: #5d6c8d;
+  --success-bg: #dcefdc;
+  --shadow: 0 4px 16px rgba(38, 49, 62, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background: linear-gradient(90deg, var(--page-bg) 0 28.2%, var(--surface) 28.2% 51.5%, var(--page-bg) 51.5% 100%);
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+.report-page {
+  display: grid;
+  grid-template-columns: minmax(560px, 1fr) minmax(520px, 0.95fr);
+  gap: 26px;
+  min-width: 1120px;
+  height: 100vh;
+  padding: 22px 20px 0;
+  overflow: hidden;
+}
+
+h1 {
+  margin: 0 0 30px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.followup-list {
+  min-width: 0;
+}
+
+.list-card,
+.detail-card {
+  background: var(--surface);
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+}
+
+.scroll-panel {
+  scrollbar-color: #8b8b8b transparent;
+  scrollbar-width: auto;
+}
+
+.scroll-panel::-webkit-scrollbar {
+  width: 17px;
+  height: 17px;
+}
+
+.scroll-panel::-webkit-scrollbar-thumb {
+  background: #8b8b8b;
+  border: 4px solid transparent;
+  border-radius: 999px;
+  background-clip: content-box;
+}
+
+.scroll-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-panel::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.list-card {
+  height: calc(100vh - 84px);
+  overflow: auto;
+  padding-top: 53px;
+}
+
+.followup-row {
+  display: grid;
+  grid-template-columns: 160px 290px 240px;
+  align-items: center;
+  width: 720px;
+  min-height: 124px;
+  padding: 10px 24px 10px 26px;
+  border-bottom: 1px solid var(--muted-border);
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.followup-row.selected {
+  background: var(--selected);
+}
+
+.followup-row time {
+  font-size: 17px;
+  white-space: nowrap;
+}
+
+.student-info h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.student-info p {
+  margin: 0;
+}
+
+.student-info strong {
+  display: block;
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.row-action {
+  justify-self: end;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.row-action span {
+  display: block;
+}
+
+.detail-card {
+  position: relative;
+  height: calc(100vh - 44px);
+  overflow-y: auto;
+  padding: 54px 24px 0 26px;
+}
+
+.timeline-entry {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  gap: 26px;
+}
+
+.update-entry {
+  min-height: 406px;
+}
+
+.enquiry-entry {
+  margin-right: -1px;
+  padding-top: 10px;
+  border-top: 2px solid var(--accent);
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+}
+
+.avatar svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.entry-content {
+  min-width: 0;
+}
+
+.entry-title {
+  margin: 0 0 24px;
+  max-width: 470px;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.entry-title strong {
+  font-weight: 700;
+}
+
+.detail-list {
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+}
+
+.detail-list div {
+  display: grid;
+  grid-template-columns: 1fr 198px;
+  align-items: center;
+  min-height: 45px;
+  border-bottom: 1px solid var(--muted-border);
+}
+
+.detail-list dt,
+.detail-list dd {
+  margin: 0;
+  font-weight: 400;
+}
+
+.enquiry-entry .entry-title {
+  margin-top: 3px;
+  margin-bottom: 24px;
+}
+
+h3 {
+  margin: 0 0 2px;
+  font-size: 19px;
+  line-height: 1;
+}
+
+.item-pill {
+  width: 100%;
+  min-height: 50px;
+  margin-top: 0;
+  padding: 14px 16px;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  background: var(--success-bg);
+  font-size: 17px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: clip;
+}
+
+@media (max-width: 1119px) {
+  .report-page {
+    min-width: 0;
+    grid-template-columns: 1fr;
+    height: auto;
+    overflow: visible;
+  }
+
+  .list-card,
+  .detail-card {
+    height: auto;
+    max-height: 620px;
+  }
+}
